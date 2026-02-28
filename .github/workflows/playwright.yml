@@ -1,0 +1,26 @@
+name: Playwright QA with 25ds3000027@ds.study.iitm.ac.in
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  run-playwright:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Playwright
+        run: |
+          npm install playwright
+          npx playwright install --with-deps
+
+      - name: Run Script - 25ds3000027@ds.study.iitm.ac.in
+        run: node index.js
