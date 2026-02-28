@@ -6,7 +6,7 @@ const { chromium } = require("playwright");
 
   let total = 0;
 
-  for (let seed = 76; seed <= 85; seed++) {
+  for (let seed = 34; seed <= 43; seed++) {
     const url = `https://sanand0.github.io/tdsdata/js_table/?seed=${seed}`;
     await page.goto(url);
 
